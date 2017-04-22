@@ -6,23 +6,25 @@ zstyle :compinstall filename '/home/michael/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Use vim keybindings
+# https://dougblack.io/words/zsh-vi-mode.html
 bindkey -v
-# End of lines configured by zsh-newuser-install
 
-
-#
 # ssh-agent, do not prompt for ssh-add until needed and delete alias afterwards
-#
+# https://superuser.com/a/471640
 #ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
 #
 # Aliases
 #
 alias ls='ls -alh --color=auto'
+alias dup='(xterm &)'
+alias scansystem="clamscan --recursive=yes --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /"
 
 #
 # https://wiki.archlinux.org/index.php/Zsh#Key_bindings
@@ -71,7 +73,6 @@ fi
 #
 # Exports
 #
-
 # Golang
 export GOPATH=/home/michael/go
 export PATH=$PATH:$GOPATH/bin
@@ -83,15 +84,5 @@ export PATH="/home/michael/.gem/ruby/2.4.0/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
-# added by Anaconda3 2.1.0 installer
-#export PATH="/home/michael/anaconda3/bin:$PATH"
-#export PATH="/home/michael/anaconda/bin:$PATH"
-
 # subuser
 #export PATH="/home/michael/.subuser/bin:$PATH"
-
-
-#
-# shortcuts
-#
-# clamscan --recursive=yes --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /
