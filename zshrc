@@ -1,3 +1,4 @@
+# https://github.com/seebi/zshrc
 # The following lines were added by compinstall {{{
 
 zstyle ':completion:*' completer _complete _ignored
@@ -92,7 +93,11 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 fi
 # }}}
 
-# Exports {{{
+# Environment {{{
+# XDG Base Directory Specification
+# http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Golang
 export GOPATH=/home/michael/go
 export PATH=$PATH:$GOPATH/bin
