@@ -1,0 +1,5 @@
+# Vim swap
+*.swp
+
+# temporary
+*~
