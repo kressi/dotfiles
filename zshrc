@@ -109,6 +109,8 @@ export PATH="/home/michael/.gem/ruby/2.4.0/bin:$PATH"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
+# Scala
+export SCALA_HOME=/usr/share/scala
 # subuser
 #export PATH="/home/michael/.subuser/bin:$PATH"
 # }}}

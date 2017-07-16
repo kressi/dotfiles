@@ -1,0 +1,15 @@
+-- https://www.citusdata.com/blog/2017/07/16/customizing-my-postgres-shell-using-psqlrc/
+-- https://robots.thoughtbot.com/an-explained-psqlrc
+\set QUIET 1
+\pset null '(NULL)'
+
+-- Show runtime of each query
+\timing
+
+-- Show long records with attribute per row
+\x auto
+
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
+\unset QUIET
