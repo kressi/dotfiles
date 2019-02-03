@@ -48,7 +48,7 @@ alias scansystem="clamscan --recursive=yes --infected --exclude-dir='^/sys|^/pro
 # https://wiki.archlinux.org/index.php/Zsh#Key_bindings
 # https://github.com/gregf/dotfiles/blob/master/zsh/zkbd.zsh
 
-# create a zkbd compatible hash;
+ create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
 
@@ -97,6 +97,8 @@ fi
 # XDG Base Directory Specification
 # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 # Golang
 export GOPATH=/home/michael/go
@@ -113,4 +115,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 export SCALA_HOME=/usr/share/scala
 # subuser
 #export PATH="/home/michael/.subuser/bin:$PATH"
+
+#Jenkins X
+export PATH="/home/michael/.jx/bin:$PATH"
 # }}}
