@@ -48,7 +48,7 @@ alias scansystem="clamscan --recursive=yes --infected --exclude-dir='^/sys|^/pro
 # https://wiki.archlinux.org/index.php/Zsh#Key_bindings
 # https://github.com/gregf/dotfiles/blob/master/zsh/zkbd.zsh
 
- create a zkbd compatible hash;
+# create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
 
