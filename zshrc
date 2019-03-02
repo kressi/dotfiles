@@ -38,6 +38,8 @@ bindkey -v
 alias ls='ls -alh --color=auto'
 alias dup='(xterm &)'
 alias scansystem="clamscan --recursive=yes --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /"
+alias printcfg='system-config-printer'
+alias wlancfg='wifi-menu'
 
 # ssh-agent, do not prompt for ssh-add until needed and delete alias afterwards
 # https://superuser.com/a/471640
