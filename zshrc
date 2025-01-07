@@ -40,6 +40,10 @@ alias dup='(xterm &)'
 alias scansystem="clamscan --recursive=yes --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /"
 alias printcfg='system-config-printer'
 alias wlancfg='wifi-menu'
+alias find-pacfiles='find / -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null'
+alias start-theia='docker run -it --init -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
+alias start-idea='(_JAVA_AWT_WM_NONREPARENTING=1 idea &> /dev/null &)'
+alias start-minidlna='minidlnad -f /home/$USER/.config/minidlna/minidlna.conf -P /home/$USER/.config/minidlna/minidlna.pid'
 
 # ssh-agent, do not prompt for ssh-add until needed and delete alias afterwards
 # https://superuser.com/a/471640
@@ -96,28 +100,24 @@ fi
 # }}}
 
 # Environment {{{
+export $(envsubst < .env)
+
 # XDG Base Directory Specification
 # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+export PATH=/home/michael/.local/bin:$PATH
+
 # Golang
 export GOPATH=/home/michael/go
 export PATH=$PATH:$GOPATH/bin
 
-# Ruby
-export PATH="/home/michael/.gem/ruby/2.4.0/bin:$PATH"
-
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_HOME=/usr/lib/jvm/default
 export PATH=$JAVA_HOME/bin:$PATH
 
-# Scala
-export SCALA_HOME=/usr/share/scala
-# subuser
-#export PATH="/home/michael/.subuser/bin:$PATH"
-
-#Jenkins X
-export PATH="/home/michael/.jx/bin:$PATH"
+# Cargo
+export PATH=$HOME/.cargo/bin:$PATH
 # }}}
